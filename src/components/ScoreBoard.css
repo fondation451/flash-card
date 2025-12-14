@@ -1,0 +1,83 @@
+.score-board {
+  width: 100%;
+  max-width: 540px;
+  min-width: 300px;
+  margin: 0 auto 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .score-board {
+    min-width: 280px;
+    max-width: 100%;
+    margin-bottom: 16px;
+  }
+}
+
+.score-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 0 4px;
+}
+
+.stat {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.stat-value {
+  font-size: 32px;
+  line-height: 167%;
+  font-weight: 700;
+  color: #000000;
+}
+
+@media screen and (max-width: 480px) {
+  .stat-value {
+    font-size: 22px;
+    line-height: 167%;
+  }
+}
+
+.stat-value.correct {
+  color: #000000;
+}
+
+.stat-label {
+  font-size: 16px;
+  line-height: 162%;
+  color: #666666;
+}
+
+@media screen and (max-width: 480px) {
+  .stat-label {
+    font-size: 14px;
+  }
+}
+
+.progress-bar {
+  height: 4px;
+  background: #e5e7eb;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #000000;
+  border-radius: 2px;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Landscape mobile orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+  .score-board {
+    margin-bottom: 10px;
+  }
+
+  .stat-value {
+    font-size: 20px;
+  }
+}

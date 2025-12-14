@@ -1,0 +1,107 @@
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+@media screen and (max-width: 480px) {
+  .action-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+    margin: 16px auto 0;
+    gap: 8px;
+  }
+}
+
+.action-buttons.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 157%;
+  font-weight: 700;
+  cursor: pointer;
+  min-width: 130px;
+  background: #ffffff;
+  color: #000000;
+}
+
+@media screen and (max-width: 480px) {
+  .action-btn {
+    width: 100%;
+    padding: 10px 20px;
+    min-width: auto;
+  }
+}
+
+.action-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media screen and (max-width: 480px) {
+  .action-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.action-btn.incorrect {
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+}
+
+.action-btn.incorrect:hover:not(:disabled) {
+  background: #e5e7eb;
+  transform: translateY(-2px);
+}
+
+.action-btn.correct {
+  background: #000000;
+  color: #ffffff;
+  border: 2px solid #000000;
+}
+
+.action-btn.correct:hover:not(:disabled) {
+  background: #333333;
+  transform: translateY(-2px);
+}
+
+.action-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.action-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #000000;
+}
+
+/* Landscape mobile orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+  .action-buttons {
+    flex-direction: row;
+    margin-top: 10px;
+  }
+
+  .action-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
